@@ -1,0 +1,6 @@
+# 🖼️ Recursos Visuales y Multimedia (Assets)
+
+Esta carpeta contiene las evidencias gráficas del proyecto **TempPredictor-ML-Skill / TempCast**:
+
+- **`infografia.png`**: Infografía conceptual sobre el desarrollo e integración de Skills en Gemini.
+- **`gemini_skill_proof.png`**: Captura de pantalla que evidencia el flujo de trabajo (`Steps`) y la ejecución de la app TempCast en Google Labs (Opal)[cite: 1].
