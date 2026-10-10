@@ -1,0 +1,286 @@
+# TempPredictor-ML-Skill: De la Regresión Lineal a las Skills de IA
+
+**Institución:** Corporación Universitaria Unilasallista  
+**Programa:** Ingeniería de Software  
+**Repositorio:** `RL_Celsius0.1`
+
+---
+
+## 1. Introducción
+
+El proyecto **TempPredictor-ML-Skill** tiene como propósito explorar el desarrollo de modelos predictivos mediante Machine Learning y su integración con herramientas de inteligencia artificial. El trabajo abarca desde la construcción y el entrenamiento de un modelo en Python utilizando Google Colab hasta la creación de una Skill denominada **TempCast** en Gemini, orientada al análisis de datos históricos y la generación de pronósticos de temperatura.
+
+El proyecto permite comprender las diferencias entre la programación tradicional y el aprendizaje automático, experimentar con redes neuronales y reconocer cómo se pueden conectar diferentes herramientas para desarrollar soluciones tecnológicas.
+
+### Objetivos
+
+- Comprender los fundamentos de Machine Learning mediante un ejercicio práctico.
+- Desarrollar y evaluar un modelo predictivo utilizando Python.
+- Explorar el entrenamiento de redes neuronales con capas densas y el optimizador Adam.
+- Diseñar un flujo modular de inteligencia artificial para analizar datos y generar pronósticos.
+- Integrar herramientas de desarrollo, control de versiones y despliegue web.
+- Documentar el proceso mediante archivos gráficos y recursos digitales.
+
+## 2. Contexto y problemática
+
+La predicción de valores a partir de datos es una actividad importante en el desarrollo de soluciones informáticas. La programación tradicional permite resolver problemas mediante reglas definidas, mientras que Machine Learning permite entrenar modelos para identificar patrones en conjuntos de datos.
+
+En este proyecto se estudian ambos enfoques para comprender cómo funcionan y cómo pueden utilizarse en diferentes escenarios.
+
+### 2.1. Programación tradicional
+
+En la programación tradicional, el desarrollador establece una fórmula o un conjunto de instrucciones que determinan el resultado.
+
+Un ejemplo es la conversión de grados Celsius a Fahrenheit:
+
+```python
+def celsius_a_fahrenheit(celsius):
+    return celsius * 1.8 + 32
+
+temperatura = 25
+resultado = celsius_a_fahrenheit(temperatura)
+
+print(resultado)  # 77.0
+```
+
+La fórmula utilizada es:
+
+$$
+F = C \times 1.8 + 32
+$$
+
+Donde:
+
+- `F`: temperatura en grados Fahrenheit.
+- `C`: temperatura en grados Celsius.
+
+En este caso, el programa aplica una regla matemática conocida para convertir una temperatura a otra escala.
+
+### 2.2. Machine Learning
+
+En Machine Learning, el modelo utiliza datos de ejemplo para ajustar sus parámetros y aprender relaciones que posteriormente puede utilizar para generar predicciones.
+
+El proceso general comprende:
+
+1. Preparación de los datos.
+2. Configuración del modelo.
+3. Entrenamiento mediante ejemplos.
+4. Evaluación del desempeño.
+5. Generación de predicciones con nuevos datos.
+
+A diferencia de la conversión mediante una fórmula fija, una predicción meteorológica requiere analizar datos y patrones relacionados con la evolución de la temperatura. La calidad de los resultados depende de los datos disponibles, las variables utilizadas y el modelo implementado.
+
+### 2.3. Comparación de los enfoques
+
+| Característica | Programación tradicional | Machine Learning |
+|---|---|---|
+| Funcionamiento | Ejecuta reglas definidas. | Aprende patrones a partir de datos. |
+| Lógica | Se programa explícitamente. | Se ajusta durante el entrenamiento. |
+| Entrada | Valores y condiciones. | Datos de entrenamiento y variables de entrada. |
+| Resultado | Aplicación de reglas o fórmulas. | Predicción basada en patrones aprendidos. |
+| Ejemplo | Conversión Celsius-Fahrenheit. | Estimación de temperaturas futuras. |
+
+## 3. Desarrollo del modelo en Google Colab
+
+El desarrollo experimental del modelo se realiza mediante Python en Google Colab, un entorno que permite ejecutar código, organizar datos y probar algoritmos de aprendizaje automático desde el navegador.
+
+El flujo de trabajo se organiza en cinco etapas.
+
+### 3.1. Preparación del dataset
+
+Se recopilan y organizan los datos que utilizará el modelo. En esta etapa se revisan las variables, los valores disponibles y la estructura del conjunto de datos.
+
+### 3.2. Configuración de la red neuronal
+
+Se configura la arquitectura del modelo de acuerdo con la implementación desarrollada. El enfoque estudiado contempla una capa densa (*Dense*) y el optimizador Adam para ajustar los parámetros durante el entrenamiento.
+
+### 3.3. Entrenamiento por épocas
+
+El modelo procesa los ejemplos de entrenamiento durante varias épocas. En este proceso, los parámetros se ajustan para reducir el error de predicción según la función de pérdida seleccionada.
+
+### 3.4. Evaluación del modelo
+
+Se analiza el desempeño del modelo utilizando datos de evaluación y métricas apropiadas para el problema. Esta etapa permite observar qué tan cerca se encuentran las predicciones de los valores reales.
+
+### 3.5. Inferencia
+
+Una vez entrenado, el modelo puede recibir nuevos datos de entrada para generar estimaciones. La inferencia corresponde a la utilización del modelo, no a una nueva fase de entrenamiento.
+
+### Cuaderno de Google Colab
+
+El cuaderno de Google Colab es el recurso principal para consultar el desarrollo experimental, ejecutar el código y revisar las etapas de construcción del modelo.
+
+**Enlace al cuaderno:** [Abrir el cuaderno de Google Colab](https://colab.research.google.com/)
+
+> Nota: el enlace anterior dirige a Google Colab. Debe reemplazarse por la URL específica del cuaderno del proyecto para acceder directamente al código desarrollado.
+
+## 4. Skill de inteligencia artificial: TempCast
+
+**TempCast** es una Skill desarrollada en el entorno Gemini Gem Labs / Opal, orientada a organizar un flujo de trabajo para analizar datos históricos y generar pronósticos de temperatura.
+
+La Skill utiliza un enfoque modular que divide el proceso en cuatro componentes principales.
+
+### 4.1. Flujo de trabajo
+
+```text
+Historical Data File
+        |
+        v
+Prediction Days
+        |
+        v
+Analyze and Forecast Temperature
+        |
+        v
+Generate Forecast
+```
+
+### 4.2. Descripción de los módulos
+
+#### 1. Historical Data File
+
+Recibe el archivo que contiene los datos históricos necesarios para el análisis.
+
+#### 2. Prediction Days
+
+Define el número de días que se desea considerar en la solicitud de predicción.
+
+#### 3. Analyze and Forecast Temperature
+
+Representa la etapa de análisis de los datos y procesamiento de la solicitud de pronóstico.
+
+#### 4. Generate Forecast
+
+Organiza y presenta el resultado generado por el flujo de trabajo.
+
+### 4.3. Objetivo de la integración
+
+La estructura modular permite organizar las entradas, el procesamiento y la presentación de los resultados. También facilita la comprensión del funcionamiento general de una Skill de inteligencia artificial y de cómo puede ofrecer una interacción más sencilla para el usuario.
+
+Es importante diferenciar este flujo de la red neuronal desarrollada en Colab: la existencia de ambos componentes no implica que estén conectados directamente. Esa integración debe verificarse en la implementación antes de afirmar que TempCast utiliza las predicciones del modelo entrenado.
+
+### 4.4. Acceso a TempCast
+
+Puedes consultar la Skill en el siguiente enlace:
+
+**[Abrir TempCast en Gemini Gem Labs](https://gemini.google.com/gem-labs/1vJz9jAwk1iikBa4L41VfX-LF5rrji74D)**
+
+El acceso y la disponibilidad de la Skill pueden depender de los permisos, la cuenta de Google y las condiciones del servicio.
+
+## 5. Ecosistema de desarrollo y despliegue
+
+El proyecto utiliza diferentes herramientas para desarrollar el modelo, administrar los archivos del repositorio, trabajar con el código y publicar los recursos web compatibles.
+
+### 5.1. Google Colab
+
+Se utiliza como entorno de experimentación para ejecutar Python, preparar los datos y desarrollar el modelo de Machine Learning.
+
+### 5.2. GitHub
+
+GitHub permite almacenar el código fuente, organizar los archivos, documentar el proyecto y mantener un historial de cambios.
+
+**Repositorio:** `RL_Celsius0.1`
+
+### 5.3. Netlify
+
+Netlify permite publicar sitios web estáticos y otros proyectos compatibles. Su función dentro del ecosistema es facilitar la publicación de los recursos web del proyecto cuando se encuentran configurados para su despliegue.
+
+El uso de Netlify no implica que un modelo Python o una Skill de Gemini se ejecuten automáticamente en ese entorno.
+
+### 5.4. Antigravity
+
+Antigravity se utiliza como herramienta de apoyo al desarrollo de software, para trabajar con el código y facilitar tareas de programación.
+
+### 5.5. Flujo tecnológico
+
+```text
+Google Colab
+     |
+     | Desarrollo y experimentación
+     v
+GitHub - RL_Celsius0.1
+     |
+     | Control de versiones y archivos
+     v
+Netlify
+     |
+     | Publicación de recursos web compatibles
+     v
+Sitio web del proyecto
+```
+
+**Antigravity** complementa este flujo como entorno de apoyo al desarrollo. La sincronización entre herramientas y la publicación automática dependen de la configuración implementada.
+
+## 6. Estructura del repositorio
+
+La siguiente es una estructura recomendada para organizar los recursos principales del proyecto:
+
+```text
+RL_Celsius0.1/
+├── README.md
+├── assets/
+│   ├── infografia.png
+│   └── gemini_skill_proof.png
+└── [archivos adicionales del proyecto]
+```
+
+Los nombres entre corchetes representan archivos adicionales que pueden incorporarse según la implementación real.
+
+### 6.1. Infografía del proyecto
+
+La infografía resume visualmente los objetivos, la comparación entre programación tradicional y Machine Learning, las etapas de desarrollo del modelo, el flujo de TempCast y el ecosistema tecnológico.
+
+![Infografía del proyecto TempPredictor-ML-Skill](assets/infografia.png)
+
+**Archivo:** `assets/infografia.png`
+
+### 6.2. Evidencia de la Skill TempCast
+
+La captura de pantalla documenta visualmente la Skill desarrollada en Gemini y sirve como evidencia complementaria del trabajo realizado.
+
+![Evidencia de la Skill TempCast en Gemini](assets/gemini_skill_proof.png)
+
+**Archivo:** `assets/gemini_skill_proof.png`
+
+> Para que las imágenes se visualicen correctamente en GitHub, deben existir en la carpeta `assets/` y conservar exactamente los nombres indicados, respetando mayúsculas y minúsculas.
+
+## 7. Resultados y aprendizajes
+
+El proyecto permite relacionar conceptos de programación, análisis de datos, aprendizaje automático e inteligencia artificial mediante una experiencia práctica.
+
+Entre los principales aprendizajes se encuentran:
+
+- Diferenciar una solución basada en reglas matemáticas de otra basada en patrones aprendidos.
+- Reconocer las etapas necesarias para preparar, entrenar y evaluar un modelo predictivo.
+- Comprender la función de las redes neuronales y de los optimizadores en el proceso de aprendizaje.
+- Organizar un flujo modular para el análisis de datos y la generación de pronósticos.
+- Identificar la función de las herramientas de desarrollo, control de versiones y publicación web.
+- Documentar los componentes del proyecto mediante archivos Markdown, diagramas e imágenes.
+
+La evaluación real del modelo debe respaldarse con las métricas calculadas durante los experimentos. Del mismo modo, la calidad de los pronósticos de TempCast debe verificarse mediante los resultados obtenidos con los datos utilizados.
+
+## 8. Conclusiones
+
+TempPredictor-ML-Skill representa una aproximación práctica a la construcción de soluciones que combinan programación, Machine Learning y herramientas de inteligencia artificial.
+
+El proceso parte de la comprensión de las reglas matemáticas y evoluciona hacia el entrenamiento de un modelo capaz de generar estimaciones a partir de datos. Posteriormente, el flujo modular de TempCast permite estudiar cómo se organizan las entradas, el análisis y la presentación de pronósticos dentro de una Skill.
+
+Finalmente, el ecosistema compuesto por Google Colab, GitHub, Netlify y Antigravity muestra el papel que cumplen diferentes herramientas durante el desarrollo, la documentación y la publicación de un proyecto de software.
+
+En conjunto, el trabajo fortalece la comprensión del ciclo de desarrollo de una solución informática basada en datos, desde la experimentación inicial hasta la organización de sus componentes y su presentación.
+
+---
+
+## 9. Recursos del proyecto
+
+- **Repositorio:** `RL_Celsius0.1`
+- **Cuaderno de desarrollo:** [Google Colab](https://colab.research.google.com/)
+- **Skill TempCast:** [Gemini Gem Labs](https://gemini.google.com/gem-labs/1vJz9jAwk1iikBa4L41VfX-LF5rrji74D)
+- **Infografía:** [`assets/infografia.png`](assets/infografia.png)
+- **Evidencia de Gemini:** [`assets/gemini_skill_proof.png`](assets/gemini_skill_proof.png)
+
+---
+
+**Corporación Universitaria Unilasallista**  
+**Ingeniería de Software**  
+*TempPredictor-ML-Skill: De la Regresión Lineal a las Skills de IA*
